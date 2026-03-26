@@ -10,7 +10,7 @@
 	<h2>1. Initial subscription refunds</h2>
 	<p>
 		If you purchase InfraLetter for the first time and decide it is not the right fit, you may
-		request a refund within <strong>14 days</strong> of your initial payment.
+		request a refund within <strong>14 days</strong> of your initial payment and before the next digests reach your inbox.
 	</p>
 	<p>Refund requests should be sent to:</p>
 	<p>

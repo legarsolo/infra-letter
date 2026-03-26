@@ -1,42 +1,38 @@
-# sv
+# InfraLetter
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+SvelteKit app deployed to GitHub Pages via GitHub Actions.
 
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
+## Develop locally
 
 ```sh
-# create a new project
-npx sv create my-app
-```
-
-To recreate this project with the same configuration:
-
-```sh
-# recreate this project
-npx sv@0.12.7 create --template minimal --types ts --add prettier eslint tailwindcss="plugins:typography,forms" devtools-json mdsvex paraglide="languageTags:en, es+demo:no" --install npm infra-letter
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```sh
+npm install
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
 
-## Building
+## Build locally (GitHub Pages path)
 
-To create a production version of your app:
+When testing the same path behavior as GitHub Pages project sites:
 
-```sh
+```powershell
+$env:BASE_PATH = "/infra-letter"
 npm run build
+Remove-Item Env:BASE_PATH
 ```
 
-You can preview the production build with `npm run preview`.
+## Deploy to GitHub Pages
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+This repo includes `.github/workflows/deploy.yml` and deploys on pushes to `main`.
+
+In GitHub:
+
+1. Open **Settings -> Pages**.
+2. Set **Source** to **GitHub Actions**.
+3. Push to `main`.
+
+The workflow builds the app to `build/` and publishes it to Pages.
+
+## Notes
+
+- `BASE_PATH` is read from the environment during build.
+- For project pages, the workflow sets `BASE_PATH` to `/<repository-name>`.
+- If you later switch to a user/org site (`<owner>.github.io`), set `BASE_PATH` to an empty string in the workflow.
