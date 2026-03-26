@@ -1,38 +1,23 @@
 # InfraLetter
 
-SvelteKit app deployed to GitHub Pages via GitHub Actions.
+InfraLetter is a lightweight landing site for an AWS cost-digest product aimed at founders and small engineering teams.
 
-## Develop locally
+## What this project includes
 
-```sh
-npm install
-npm run dev
-```
+- Marketing site pages (home, AWS setup, apply, legal pages)
+- Static site build for GitHub Pages
+- Simple CI/CD workflow for automatic deployment on push to `main`
 
-## Build locally (GitHub Pages path)
+## Tech stack
 
-When testing the same path behavior as GitHub Pages project sites:
+- SvelteKit (Svelte 5)
+- Vite
+- Tailwind CSS
 
-```powershell
-$env:BASE_PATH = "/infra-letter"
-npm run build
-Remove-Item Env:BASE_PATH
-```
+## License
 
-## Deploy to GitHub Pages
+This project is **proprietary and closed-source**.
 
-This repo includes `.github/workflows/deploy.yml` and deploys on pushes to `main`.
+Copyright (c) 2026 InfraLetter. All rights reserved.
 
-In GitHub:
-
-1. Open **Settings -> Pages**.
-2. Set **Source** to **GitHub Actions**.
-3. Push to `main`.
-
-The workflow builds the app to `build/` and publishes it to Pages.
-
-## Notes
-
-- `BASE_PATH` is read from the environment during build.
-- For project pages, the workflow sets `BASE_PATH` to `/<repository-name>`.
-- If you later switch to a user/org site (`<owner>.github.io`), set `BASE_PATH` to an empty string in the workflow.
+No permission is granted to use, copy, modify, distribute, sublicense, or create derivative works of this code or content without prior written permission from the owner.
